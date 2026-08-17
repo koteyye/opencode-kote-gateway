@@ -76,7 +76,7 @@ export const server: Plugin = async (input, options) => {
 }
 
 const plugin = {
-  id: "@koteyye/kote-gateway-opencode",
+  id: "@koteye/kote-gateway-opencode",
   server,
 } satisfies PluginModule
 

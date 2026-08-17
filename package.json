@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@koteyye/kote-gateway-opencode",
+  "name": "@koteye/kote-gateway-opencode",
   "version": "0.1.0",
   "description": "Fail-closed Kote Gateway transport plugin for OpenCode",
   "type": "module",

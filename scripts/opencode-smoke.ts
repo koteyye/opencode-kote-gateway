@@ -23,7 +23,7 @@ try {
       name: "kote-gateway-opencode-smoke-consumer",
       private: true,
       dependencies: {
-        "@koteyye/kote-gateway-opencode": `file:${path.join(tarballs, archives[0]!)}`,
+        "@koteye/kote-gateway-opencode": `file:${path.join(tarballs, archives[0]!)}`,
       },
     }),
   )
@@ -39,7 +39,7 @@ try {
       configPath,
       JSON.stringify({ version: 1, default: "direct", strict: true, providers: { smoke: "direct" } }),
     )
-    const installed = path.join(consumer, "node_modules", "@koteyye", "kote-gateway-opencode")
+    const installed = path.join(consumer, "node_modules", "@koteye", "kote-gateway-opencode")
     const isolated = path.join(temp, "opencode")
     const env = {
       ...process.env,

@@ -1,6 +1,6 @@
 # KoteGateway for OpenCode
 
-`@koteyye/kote-gateway-opencode` routes OpenCode provider traffic either directly or through the KoteGateway HTTPS `CONNECT` proxy. It is a standalone OpenCode plugin: it does not patch OpenCode, replace providers, copy credentials, or add UI.
+`@koteye/kote-gateway-opencode` routes OpenCode provider traffic either directly or through the KoteGateway HTTPS `CONNECT` proxy. It is a standalone OpenCode plugin: it does not patch OpenCode, replace providers, copy credentials, or add UI.
 
 The route is selected by the exact `model.providerID` supplied to the public `chat.headers` hook. There is no provider allowlist. A new provider automatically uses the configured default when its HTTP transport reaches the process `fetch` interceptor.
 
@@ -21,7 +21,7 @@ Add the package to the OpenCode configuration:
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "@koteyye/kote-gateway-opencode"
+    "@koteye/kote-gateway-opencode"
   ]
 }
 ```
@@ -33,7 +33,7 @@ OpenCode installs npm plugins with Bun. The audited 1.18.18 public plugin type a
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
     [
-      "@koteyye/kote-gateway-opencode",
+      "@koteye/kote-gateway-opencode",
       {
         "configPath": "~/.config/kote-gateway/config.json"
       }
@@ -122,7 +122,7 @@ Set `KOTE_GATEWAY_LOG_LEVEL=debug` before starting OpenCode. Logs are intentiona
 
 Useful checks:
 
-1. Confirm OpenCode loaded `@koteyye/kote-gateway-opencode` without an install or compatibility error.
+1. Confirm OpenCode loaded `@koteye/kote-gateway-opencode` without an install or compatibility error.
 2. Confirm the resolved configuration path and route in debug output.
 3. For proxy failures, restore the signed bootstrap service or a still-valid last-known-good cache; do not expect a direct retry.
 4. If `KOTE_UNSUPPORTED_TRANSPORT` appears, disable the experimental transport or use an explicitly direct route.
@@ -130,7 +130,7 @@ Useful checks:
 
 ## Uninstall
 
-Remove `@koteyye/kote-gateway-opencode` (or its tuple) from the OpenCode `plugin` array and restart OpenCode. The plugin's `dispose()` unregisters its instance and restores the captured fetch only when it is the last active instance and no later plugin has replaced the wrapper.
+Remove `@koteye/kote-gateway-opencode` (or its tuple) from the OpenCode `plugin` array and restart OpenCode. The plugin's `dispose()` unregisters its instance and restores the captured fetch only when it is the last active instance and no later plugin has replaced the wrapper.
 
 Configuration and bootstrap cache files are not automatically deleted. Remove them separately only if they are no longer needed.
 

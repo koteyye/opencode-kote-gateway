@@ -1,6 +1,6 @@
 # Repository instructions
 
-- This repository is the standalone `@koteyye/kote-gateway-opencode` package. Do not patch or import OpenCode internals.
+- This repository is the standalone `@koteye/kote-gateway-opencode` package. Do not patch or import OpenCode internals.
 - Keep `src/core` independent of OpenCode. Only `src/opencode` and `src/server.ts` may reference the public `@opencode-ai/plugin` package.
 - Preserve the signed bootstrap wire format documented in `docs/reconnaissance.md`.
 - Proxy routes are fail-closed. Never add a proxy-to-direct fallback.

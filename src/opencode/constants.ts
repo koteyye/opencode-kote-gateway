@@ -1,4 +1,4 @@
-export const GLOBAL_STATE = Symbol.for("@koteyye/kote-gateway-opencode/global-state/v1")
+export const GLOBAL_STATE = Symbol.for("@koteye/kote-gateway-opencode/global-state/v1")
 export const GLOBAL_STATE_VERSION = 1 as const
 export const ROUTE_HEADER = "x-kote-route-token"
 export const OPENCODE_HTTP_FALLBACK_HEADER = "x-opencode-title"
