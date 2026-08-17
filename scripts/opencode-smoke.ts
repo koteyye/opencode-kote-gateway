@@ -43,6 +43,8 @@ try {
     const isolated = path.join(temp, "opencode")
     const env = {
       ...process.env,
+      // OpenCode also consults PWD on Unix; Bun.spawn's cwd does not rewrite an inherited value.
+      PWD: consumer,
       XDG_DATA_HOME: path.join(isolated, "data"),
       XDG_CACHE_HOME: path.join(isolated, "cache"),
       XDG_CONFIG_HOME: path.join(isolated, "config"),
