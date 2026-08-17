@@ -67,12 +67,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koteyye/kote-gateway-opencode.git"
+    "url": "git+https://github.com/koteyye/opencode-kote-gateway.git"
   },
   "bugs": {
-    "url": "https://github.com/koteyye/kote-gateway-opencode/issues"
+    "url": "https://github.com/koteyye/opencode-kote-gateway/issues"
   },
-  "homepage": "https://github.com/koteyye/kote-gateway-opencode#readme",
+  "homepage": "https://github.com/koteyye/opencode-kote-gateway#readme",
   "keywords": [
     "opencode",
     "plugin",
