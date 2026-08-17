@@ -2,6 +2,8 @@
 
 `@koteye/kote-gateway-opencode` routes OpenCode provider traffic either directly or through the KoteGateway HTTPS `CONNECT` proxy. It is a standalone OpenCode plugin: it does not patch OpenCode, replace providers, copy credentials, or add UI.
 
+> Подробная инструкция на русском языке: [установка, настройка и ручная проверка](docs/guide.ru.md).
+
 The route is selected by the exact `model.providerID` supplied to the public `chat.headers` hook. There is no provider allowlist. A new provider automatically uses the configured default when its HTTP transport reaches the process `fetch` interceptor.
 
 > Compatibility ceiling: OpenCode 1.18.18. The source audit used OpenCode 1.18.18 (`2cba7e227d68a7e7e4a2aa9c85b808e8ecb14daf`), `@opencode-ai/plugin` 1.18.18, and Bun 1.3.14. See [Provider compatibility](docs/provider-compatibility.md) before enabling proxy mode for a new transport.
@@ -45,6 +47,8 @@ OpenCode installs npm plugins with Bun. The audited 1.18.18 public plugin type a
 ## Configure
 
 Create `config.json`:
+
+The example below is a strict proxy-by-default policy intended for provider transports that have already been audited. For a gradual rollout, start with `default: "direct"`, test one explicit provider in direct mode, and then switch that provider to `proxy`.
 
 ```json
 {
